@@ -506,3 +506,4 @@ cmp.setup {
 -- vim: ts=2 sts=2 sw=2 et
 
 require("custom.yamlls")
+require("custom.keymaps")
