@@ -32,4 +32,10 @@ vim.keymap.set('n', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = '[S]earch [C]ommands' })
 vim.keymap.set('n', '<leader>tt', require('toggleterm').toggle_command, { desc = '[T]oggle [T]erminal' })
 
-
+-- Trouble
+vim.keymap.set("n", "<leader>tx", "<cmd>TroubleToggle<cr>", { desc = '[T]oggle [X] Trouble'})
+vim.keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = '[T]oggle [W]orkspace Diagnostics'})
+vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = '[T]oggle [D]ocument Diagnostics'})
+vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = '[T]oggle [L]oclis'})
+vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = '[T]oggle [Q]uickfi'})
+-- vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = '[T]oggle [X] Trouble'})
