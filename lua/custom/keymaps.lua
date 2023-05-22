@@ -31,6 +31,7 @@ vim.keymap.set('n', '<C-w>', [[<C-\><C-n><C-w>]], opts)
 -- Searches
 vim.keymap.set('n', '<leader>sc', require('telescope.builtin').commands, { desc = '[S]earch [C]ommands' })
 vim.keymap.set('n', '<leader>tt', require('toggleterm').toggle_command, { desc = '[T]oggle [T]erminal' })
+vim.keymap.set('n', '<leader>so', require('telescope.builtin').buffers, { desc = '[S]earch [O]pen Buffers' })
 
 -- Trouble
 vim.keymap.set("n", "<leader>tx", "<cmd>TroubleToggle<cr>", { desc = '[T]oggle [X] Trouble'})
@@ -39,3 +40,5 @@ vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>",
 vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = '[T]oggle [L]oclis'})
 vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = '[T]oggle [Q]uickfi'})
 -- vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = '[T]oggle [X] Trouble'})
+
+vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeToggle<cr>", { desc = '[T]oggle [F]ile Tree'})
