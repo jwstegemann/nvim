@@ -121,10 +121,25 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
+    'daschw/leaf.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'onedark'
+      require("leaf").setup({
+        underlineStyle = "undercurl",
+        commentStyle = "italic",
+        functionStyle = "NONE",
+        keywordStyle = "italic",
+        statementStyle = "bold",
+        typeStyle = "NONE",
+        variablebuiltinStyle = "italic",
+        transparent = false,
+        colors = {},
+        overrides = {},
+        theme = "auto", -- default, based on vim.o.background, alternatives: "light", "dark"
+        contrast = "medium", -- default, alternatives: "medium", "high"
+      })
+      vim.cmd.colorscheme 'leaf'
+      vim.o.cursorline = true
     end,
   },
 
@@ -135,7 +150,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'everforest',
         component_separators = '|',
         section_separators = '',
       },
@@ -202,10 +217,11 @@ require('lazy').setup({
 -- See `:help vim.o`
 
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.o.hlsearch = true
 
 -- Make line numbers default
 vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Enable mouse mode
 vim.o.mouse = 'a'
