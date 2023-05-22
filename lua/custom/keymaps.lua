@@ -1,8 +1,7 @@
-local opts = {buffer = 0}
+local opts = { buffer = 0 }
 
 -- Terminal
 function _G.set_terminal_keymaps()
-
   --vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
   --vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
   vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
@@ -34,11 +33,15 @@ vim.keymap.set('n', '<leader>tt', require('toggleterm').toggle_command, { desc =
 vim.keymap.set('n', '<leader>so', require('telescope.builtin').buffers, { desc = '[S]earch [O]pen Buffers' })
 
 -- Trouble
-vim.keymap.set("n", "<leader>tx", "<cmd>TroubleToggle<cr>", { desc = '[T]oggle [X] Trouble'})
-vim.keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>", { desc = '[T]oggle [W]orkspace Diagnostics'})
-vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>", { desc = '[T]oggle [D]ocument Diagnostics'})
-vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = '[T]oggle [L]oclis'})
-vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = '[T]oggle [Q]uickfi'})
+vim.keymap.set("n", "<leader>tx", "<cmd>TroubleToggle<cr>", { desc = '[T]oggle [X] Trouble' })
+vim.keymap.set("n", "<leader>tw", "<cmd>TroubleToggle workspace_diagnostics<cr>",
+  { desc = '[T]oggle [W]orkspace Diagnostics' })
+vim.keymap.set("n", "<leader>td", "<cmd>TroubleToggle document_diagnostics<cr>",
+  { desc = '[T]oggle [D]ocument Diagnostics' })
+vim.keymap.set("n", "<leader>tl", "<cmd>TroubleToggle loclist<cr>", { desc = '[T]oggle [L]oclis' })
+vim.keymap.set("n", "<leader>tq", "<cmd>TroubleToggle quickfix<cr>", { desc = '[T]oggle [Q]uickfix' })
 -- vim.keymap.set("n", "gR", "<cmd>TroubleToggle lsp_references<cr>", { desc = '[T]oggle [X] Trouble'})
 
-vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeToggle<cr>", { desc = '[T]oggle [F]ile Tree'})
+vim.keymap.set("n", "<leader>cf", "<cmd>Format<cr>", { desc = '[C]ode [F]ormat' })
+
+vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeToggle<cr>", { desc = '[T]oggle [F]ile Tree' })
