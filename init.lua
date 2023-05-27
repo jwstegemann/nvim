@@ -114,24 +114,18 @@ require('lazy').setup({
 
   {
     -- Theme inspired by Atom
-    'daschw/leaf.nvim',
+    'AlexvZyl/nordic.nvim',
     priority = 1000,
     config = function()
-      require("leaf").setup({
-        underlineStyle = "undercurl",
-        commentStyle = "italic",
-        functionStyle = "NONE",
-        keywordStyle = "italic",
-        statementStyle = "bold",
-        typeStyle = "NONE",
-        variablebuiltinStyle = "italic",
-        transparent = false,
-        colors = {},
-        overrides = {},
-        theme = "auto", -- default, based on vim.o.background, alternatives: "light", "dark"
-        contrast = "medium", -- default, alternatives: "medium", "high"
+      require("nordic").setup({
+        bold_keywords = true,
+        bright_border = false,
+        telescope = {
+          -- Available styles: `classic`, `flat`.
+          style = 'classic',
+        },
       })
-      vim.cmd.colorscheme 'leaf'
+      vim.cmd.colorscheme 'nordic'
       vim.o.cursorline = true
     end,
   },
@@ -143,7 +137,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'everforest',
+        theme = 'nordic',
         component_separators = '|',
         section_separators = '',
       },
@@ -165,7 +159,7 @@ require('lazy').setup({
   { 'numToStr/Comment.nvim',         opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
-  { 'nvim-telescope/telescope.nvim', branch  = '0.1.x', dependencies = { 'nvim-lua/plenary.nvim' } },
+  { 'nvim-telescope/telescope.nvim', branch = '0.1.x',  dependencies = { 'nvim-lua/plenary.nvim' } },
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
@@ -511,11 +505,11 @@ cmp.setup {
   },
   window = {
     documentation = {
-      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
+      border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
     },
     completion = {
-      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
-   --   winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+      border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+      --   winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
       winhighlight = 'Normal:line,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
     }
   },
@@ -536,5 +530,5 @@ local signs = {
 
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
