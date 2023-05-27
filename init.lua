@@ -509,6 +509,16 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
   },
+  window = {
+    documentation = {
+      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
+    },
+    completion = {
+      border = {'╭', '─', '╮', '│', '╯', '─', '╰', '│'},
+   --   winhighlight = 'Normal:CmpPmenu,FloatBorder:CmpPmenuBorder,CursorLine:PmenuSel,Search:None',
+      winhighlight = 'Normal:line,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None',
+    }
+  },
 }
 
 -- The line beneath this is called `modeline`. See `:help modeline`
@@ -518,13 +528,13 @@ require("custom.yamlls")
 require("custom.keymaps")
 
 local signs = {
-    Error = "",
-    Warning = "",
-    Hint = "󰘥",
-    Information = "󰋽"
+  Error = "",
+  Warning = "",
+  Hint = "󰘥",
+  Information = "󰋽"
 }
 
 for type, icon in pairs(signs) do
-    local hl = "DiagnosticSign" .. type
-    vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
+  local hl = "DiagnosticSign" .. type
+  vim.fn.sign_define(hl, {text = icon, texthl = hl, numhl = hl})
 end
