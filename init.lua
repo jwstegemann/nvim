@@ -136,7 +136,7 @@ require('lazy').setup({
     -- See `:help lualine.txt`
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'nordic',
         component_separators = '|',
         section_separators = '',
@@ -535,3 +535,13 @@ end
 
 vim.opt.autowriteall = true
 vim.opt.autoread = true
+
+vim.diagnostic.config({
+  underline = {
+    severity = { max = vim.diagnostic.severity.INFO }
+  },
+  virtual_text = {
+    severity = { min = vim.diagnostic.severity.WARN }
+  }
+})
+
