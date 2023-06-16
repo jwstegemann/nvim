@@ -1,5 +1,8 @@
 local opts = { buffer = 0 }
+  --vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
+local opts = { buffer = 0 }
 
+local opts = { buffer = 0 }
 -- Terminal
 function _G.set_terminal_keymaps()
   --vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
@@ -50,3 +53,9 @@ vim.keymap.set("n", "<leader>cf", "<cmd>Format<cr>", { desc = '[C]ode [F]ormat' 
 
 -- File-Tree
 vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeToggle<cr>", { desc = '[T]oggle [F]ile Tree' })
+
+-- do not use clipboard when deleting 
+vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true })
+vim.api.nvim_set_keymap('n', 'X', '"_X', { noremap = true })
+vim.api.nvim_set_keymap('n', '<Del>', '"_x', { noremap = true })
+vim.api.nvim_set_keymap('n', 'p', '"0p', { noremap = true })
