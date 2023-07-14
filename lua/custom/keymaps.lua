@@ -41,7 +41,7 @@ vim.keymap.set("n", "<leader>cf", "<cmd>Format<cr>", { desc = '[C]ode [F]ormat' 
 vim.keymap.set("n", "<leader>tf", "<cmd>NvimTreeToggle<cr>", { desc = '[T]oggle [F]ile Tree' })
 
 -- do not use clipboard when deleting 
-vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true })
-vim.api.nvim_set_keymap('n', 'X', '"_X', { noremap = true })
-vim.api.nvim_set_keymap('n', '<Del>', '"_x', { noremap = true })
-vim.api.nvim_set_keymap('n', 'p', '"0p', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'x', '"_x', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'X', '"_X', { noremap = true })
+-- vim.api.nvim_set_keymap('n', '<Del>', '"_x', { noremap = true })
+-- vim.api.nvim_set_keymap('n', 'p', '"0p', { noremap = true })
